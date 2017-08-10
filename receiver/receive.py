@@ -12,12 +12,14 @@ def download_from(ip):
     except urllib2.HTTPError:
         print ("Download Failed! File Not Found!")
 
-if __name__ == '__main__':
+
+def receive():
     print ("Finding LinuxDrop instances in the network...")
     active_ips = ips.get()
     try:
         download_from(active_ips[0])
     except IndexError:
+        print ("")
         print ("No LinuxDrop instances running in this network!")
 
 
