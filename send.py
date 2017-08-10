@@ -1,11 +1,22 @@
-import SimpleHTTPServer
-import SocketServer
+from flask import Flask, send_from_directory
+import sys
 
-PORT = 1921
+app = Flask(__name__, static_url_path='')
 
-Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+f_name = ""
 
-httpd = SocketServer.TCPServer(("0.0.0.0", PORT), Handler)
 
-print "serving at localhost:", PORT
-httpd.serve_forever()
+@app.route('/')
+def get_file():
+    return send_from_directory('.', f_name)
+
+
+@app.route('/name')
+def get_file_name():
+    return f_name
+
+
+if __name__ == "__main__":
+    f_name = sys.argv[1]
+    print (f_name)
+    app.run("0.0.0.0", "1921")
