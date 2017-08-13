@@ -14,10 +14,10 @@ An airdrop alternative for Linux users
 ## Usage ##
 * Send
     1. Move the directory of the file
-    2. lidrop -send [file name]
+    2. Execute: **lidrop -send [file name]**
     3. Wait for transmission to complete
 * Receive
-	1. lidrop -receive
+	1. Execute: **lidrop -receive**
 	2. Done!
 
 NB: Both devices should be on the same network
