@@ -2,8 +2,19 @@ from distutils.core import setup
 
 setup(
     name='LinuxDrop',
-    version='0.1',
-    packages=['sender', 'receiver'],
+    version='0.6',
+    packages=['sender', 'receiver', ],
+    py_modules=['lidrop'],
+    install_requires=[
+        'netifaces',
+        'flask',
+        'Click',
+        'urllib2',
+    ],
+    entry_points='''
+        [console_scripts]
+        lidrop=lidrop:run
+    ''',
     url='https://github.com/Livin21/LinuxDrop',
     license='MIT',
     author='livin',

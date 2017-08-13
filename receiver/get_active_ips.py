@@ -17,21 +17,21 @@ def find_correct_ips(ip_array):
 
 # automatically detect interface
 def get_interface_name():
-    print("Detecting interface...")
+    print("Detecting beam frequency...")
     p1 = subprocess.Popen(["ip", "route"], stdout=subprocess.PIPE)
     r = p1.communicate()
     return ''.join(map(str, r)).split("\n")[0].split("dev")[1].split(" ")[1]
 
 
 def get():
-    print("Fetching list of devices...")
+    print("Fetching list of available planets...")
     interface = get_interface_name()
     this_device_ip = ni.ifaddresses(interface)[ni.AF_INET][0]['addr']
     p2 = subprocess.Popen(["nmap", "-sP", this_device_ip + "/24"], stdout=subprocess.PIPE)
     res = p2.communicate()
     arr = ''.join(map(str, res)).replace("\n", " ").replace("(", "").replace(")", "").split(" ")
     ip_arr = []
-    print("Almost there")
+    print("Locking on target beam...")
     for i in arr:
         print(".", end="")
         if re.match(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$", i):
