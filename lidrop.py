@@ -3,7 +3,7 @@ import sys
 from sender import send
 from receiver import receive
 
-if __name__ == "__main__":
+def run():
     try:
         option = sys.argv[1]
         if option == "-send":
@@ -15,3 +15,7 @@ if __name__ == "__main__":
             print ("Usage:\n\n\t\tlidrop -send file\n\t\tlidrop -receive")
     except IndexError:
         print ("Usage:\n\n\t\tlidrop -send file\n\t\tlidrop -receive")
+
+
+if __name__ == "__main__":
+    run()
