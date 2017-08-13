@@ -9,6 +9,7 @@ def frm(ip):
     b_array = bytearray(urllib2.urlopen("http://" + ip + ":1921/").read())
     new_file.write(b_array)
     print ("Download Complete")
+    print (urllib2.urlopen("http://" + ip + ":1921/end").read())
 
 if __name__ == '__main__':
     frm("0.0.0.0")
