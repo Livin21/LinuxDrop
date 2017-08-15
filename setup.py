@@ -2,14 +2,13 @@ from distutils.core import setup
 
 setup(
     name='LinuxDrop',
-    version='0.7',
+    version='0.8',
     packages=['sender', 'receiver', ],
     py_modules=['lidrop'],
     install_requires=[
         'netifaces',
         'flask',
         'Click',
-        'urllib2',
     ],
     entry_points='''
         [console_scripts]
