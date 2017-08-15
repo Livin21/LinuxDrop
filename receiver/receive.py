@@ -1,5 +1,4 @@
-import download
-import get_active_ips as ips
+from receiver import download, get_active_ips as ips
 try:
     # For Python 3.0 and later
     from urllib.error import HTTPError
