@@ -1,15 +1,18 @@
-import urllib2
-
-import download
-import get_active_ips as ips
+from receiver import download, get_active_ips as ips
+try:
+    # For Python 3.0 and later
+    from urllib.error import HTTPError
+except ImportError:
+    # Fall back to Python 2's urllib2
+    from urllib2 import HTTPError
 
 
 def download_from(ip):
     print("")
-    print ("Connecting to planet " + ip + " ...")
+    print ("Connecting to planet " + ip + "...")
     try:
         download.frm(ip)
-    except urllib2.HTTPError:
+    except HTTPError:
         print ("Mission Failed! File Not Found! Teleport to a different planet and try again")
 
 

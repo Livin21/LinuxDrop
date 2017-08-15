@@ -1,9 +1,14 @@
-import urllib2
+try:
+    # For Python 3.0 and later
+    from urllib.request import urlopen, URLError
+except ImportError:
+    # Fall back to Python 2's urllib2
+    from urllib2 import urlopen, URLError
 
 
 def ping(ip):
     try:
-        urllib2.urlopen("http://" + ip + ":1921/name").read()
+        urlopen("http://" + ip + ":1921/name").read()
         return True
-    except urllib2.URLError:
+    except URLError:
         return False

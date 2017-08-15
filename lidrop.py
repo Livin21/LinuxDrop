@@ -3,6 +3,7 @@ import sys
 from sender import send
 from receiver import receive
 
+
 def run():
     try:
         option = sys.argv[1]

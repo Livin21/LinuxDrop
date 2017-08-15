@@ -4,7 +4,7 @@ import re
 import subprocess
 import netifaces as ni
 
-import ping_port
+from receiver import ping_port
 
 
 def find_correct_ips(ip_array):
