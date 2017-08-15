@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='LinuxDrop',
-    version='0.6',
+    version='0.7',
     packages=['sender', 'receiver', ],
     py_modules=['lidrop'],
     install_requires=[
